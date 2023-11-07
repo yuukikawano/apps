@@ -1,5 +1,5 @@
 <%= @task.title%><br>
 <%= @task.memo%><br>
-<%= @task.due%><br>
+<%= @task.duetime%><br>
 <%= link_to "編集", edit_task_path(@task)%><br>
 <%= link_to '完了', "/tasks/#{@task.id}", method: :delete %><br>

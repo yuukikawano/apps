@@ -2,7 +2,7 @@
   <% @tasks.each do |task| %>
     <%= task.title %><br>
     <%= task.memo %><br>
-    <%= task.due %><br>
+    <%= task.duetime %><br>
     <%= link_to "詳細", task_path(task[:id])%><br>
   <% end %>
   <%= link_to "タスク追加", new_task_path %>

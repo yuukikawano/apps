@@ -9,8 +9,8 @@
     <%= f.label :memo %>
     <%= f.text_field :memo, class: "form-control" %>
 
-    <%= f.label :due %>
-    <%= f.text_field :due, class: "form-control" %>
+    <%= f.label :duetime %>
+    <%= f.datetime_select :duetime, class: "form-control" %>
 
     <%= f.submit "create a task" %>
   <% end %>
