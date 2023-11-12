@@ -1,0 +1,5 @@
+<% @movies.each do |movie| %>
+  <%= movie.title %><br>
+  <%= movie.owner_id%>
+  <%= link_to "詳細", movie_path(movie.id)%><br>
+<% end %>
