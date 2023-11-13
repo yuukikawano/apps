@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
         @movie = Movie.create(movie_params)
         @movie.owner_id = current_user.id 
         @movie.save 
-        redirect_to movie_path
+        redirect_to "/movies/#{@movie.id}"
     end 
 
     def show 
@@ -20,7 +20,9 @@ class MoviesController < ApplicationController
 
     def destroy
         @movie = Movie.find(params[:id])
-        @movie.destroy
+        @movie.destroy 
+        @movie.movie.purge
+        redirect_to movies_path
     end
 
     private 

@@ -1,14 +1,13 @@
-<p id="notice"><%- notice %></p>
-
-<%= @movie.title %>
+<%= @movie.title %><br>
 <%= @movie.content %>
-
+<br>
 <% if @movie.movie.attached? %>
-  <%= "Hello, World!" %>
-  <video src="<%= rails_blob_path(@movie.movie) %>" type="video/mp4" controls></video>
+  <video width="360" height="360" src="<%= rails_blob_path(@movie.movie) %>" type="video/mp4" controls></video>
 <% else %>
   <p>hh</p>
 <% end %>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %>
+<br>
+<% if @movie.owner_id == current_user.id %>
+  <%= link_to 'delete', "/movies/#{@movie.id}", method: :delete %>
+<% end %>
 <%= link_to 'Back', movies_path %>
