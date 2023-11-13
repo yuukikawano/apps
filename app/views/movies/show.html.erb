@@ -9,5 +9,8 @@
 <br>
 <% if @movie.owner_id == current_user.id %>
   <%= link_to 'delete', "/movies/#{@movie.id}", method: :delete %>
+<% else %>
+  <%= render "comments/new" %>
 <% end %>
+<%= render "comments/index", comments: @comments%>
 <%= link_to 'Back', movies_path %>

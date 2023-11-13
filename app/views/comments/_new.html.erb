@@ -1,0 +1,10 @@
+<%= form_with(url: comments_path, scope: :comment) do |f| %>
+  <%= f.hidden_field :movie_id, value: @movie.id%>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit "create a comment" %>
+<% end %>
+
+  
