@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
 
     def show 
         @movie = Movie.find(params[:id])
+        @comments = Comment.where(movie_id: @movie.id)
     end
 
     def destroy
