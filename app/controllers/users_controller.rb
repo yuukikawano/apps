@@ -13,6 +13,9 @@ class UsersController < ApplicationController
     redirect_to tasks_path
   end
 
+  def test 
+  end
+
   private
     def user_params 
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
